@@ -1,0 +1,8 @@
+extensions:
+	dataSource: OriNette\DataSources\DI\DataSourceExtension
+
+dataSource:
+	encoders:
+		neon:
+			factory: Tests\OriNette\DataSources\Doubles\SerializeFormatEncoder()
+		serial: Tests\OriNette\DataSources\Doubles\SerializeFormatEncoder()
