@@ -28,7 +28,7 @@ final class DataSourceExtensionTest extends TestCase
 	{
 		parent::setUp();
 
-		$this->rootDir = dirname(__DIR__, 4);
+		$this->rootDir = dirname(__DIR__, 3);
 		if (PHP_VERSION_ID < 8_01_00) {
 			@mkdir("$this->rootDir/var/build");
 		}
@@ -42,8 +42,10 @@ final class DataSourceExtensionTest extends TestCase
 
 		$container = $configurator->createContainer();
 
-		self::assertInstanceOf(LazyFormatEncoderManager::class, $container->getService('dataSource.encoders.manager'));
 		self::assertInstanceOf(DefaultDataSource::class, $container->getService('dataSource.dataSource'));
+
+		self::assertInstanceOf(LazyFormatEncoderManager::class, $container->getService('dataSource.encoders.manager'));
+		self::assertNull($container->getByType(LazyFormatEncoderManager::class, false));
 
 		self::assertInstanceOf(JsonFormatEncoder::class, $container->getService('dataSource.encoder.json'));
 		self::assertInstanceOf(NeonFormatEncoder::class, $container->getService('dataSource.encoder.neon'));

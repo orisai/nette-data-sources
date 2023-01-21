@@ -1,0 +1,2 @@
+extensions:
+	orisai.dataSources: OriNette\DataSources\DI\DataSourceExtension
