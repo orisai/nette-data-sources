@@ -1,0 +1,6 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Cannot call method encode\\(\\) on object\\|null\\.$#"
+			count: 7
+			path: ../tests/Unit/DI/DataSourceExtensionTest.php
