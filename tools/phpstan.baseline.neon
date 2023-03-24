@@ -1,6 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Cannot call method encode\\(\\) on object\\|null\\.$#"
+			message: "#^Cannot call method encode\\(\\) on Orisai\\\\DataSources\\\\DataSource\\|null\\.$#"
 			count: 7
 			path: ../tests/Unit/DI/DataSourceExtensionTest.php
