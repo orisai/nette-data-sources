@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE neon PUBLIC "-//NEON//Neon plugin XML V0.0.1//EN" "../.idea/intellij-neon-pro/xmlSources/Neon.xsd">
+<neon vendor="orisai/nette-data-sources" version="1">
+	<extensions>
+		<extension type="OriNette\DataSources\DI\DataSourceExtension">
+			<schema>
+				<structure>
+					<field name="encoders">
+						<arrayOf>
+							<key>
+								<int/>
+								<string/>
+							</key>
+							<value>
+								<useReusable ref="definition"/>
+							</value>
+						</arrayOf>
+					</field>
+				</structure>
+			</schema>
+			<services>
+				<service name="dataSource" type="Orisai\DataSources\DataSource"/>
+				<service name="encoders.manager" type="Orisai\DataSources\FormatEncoderManager"/>
+			</services>
+		</extension>
+	</extensions>
+	<reusables>
+		<reusable id="definition">
+			<string/>
+			<arrayOf>
+				<key>
+					<int/>
+					<string/>
+				</key>
+				<value>
+					<mixed/>
+				</value>
+			</arrayOf>
+			<type value="object"/>
+		</reusable>
+	</reusables>
+</neon>
